@@ -13,20 +13,30 @@ Enrollment ID: **22000392**
 
 
 
-Step 1: Install dependencies (optional, uncomment if needed)
-echo "Installing Flex and Bison..."
+Step 1: Install dependencies 
+
 sudo apt-get install -y flex bison
 
+
 Step 2: Compile the compiler
+
 flex lex.l
+
 bison -d parser.y
+
 gcc lex.yy.c parser.tab.c -o compiler
 
+
 Step 3: Run the compiler on input.txt
+
 compiler input.txt output.txt
 
+
 Step 4: Compile the interpreter
+
 gcc interpreter.c -o interpreter
 
+
 Step 5: Run the interpreter
+
 interpreter
